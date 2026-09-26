@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gaming Tournament</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #050b08;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            height: 70px;
+            background: #07140e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            border-bottom: 1px solid #19ff88;
+        }
+
+        .logo {
+            color: #19ff88;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #19ff88;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,20,10,0.9)),
+                radial-gradient(circle, #123c26, #050b08 70%);
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            color: #19ff88;
+            text-shadow: 0 0 25px #19ff88;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #19ff88;
+            color: #00150a;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            box-shadow: 0 0 25px #19ff88;
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 8%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 35px;
+            color: #19ff88;
+            margin-bottom: 40px;
+        }
+
+        /* Games */
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background: #0b1711;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #123d27;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            border-color: #19ff88;
+            box-shadow: 0 0 20px rgba(25,255,136,0.3);
+        }
+
+        .game-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .game-card h3 {
+            margin-bottom: 10px;
+            color: #19ff88;
+        }
+
+        .game-card p {
+            color: #aaa;
+        }
+
+        /* Tournament */
+        .tournament {
+            background: #07140e;
+        }
+
+        .tournament-box {
+            max-width: 800px;
+            margin: auto;
+            background: #0b1711;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #19ff88;
+        }
+
+        .match {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin: 15px 0;
+            background: #07140e;
+            border-radius: 8px;
+        }
+
+        .match span {
+            color: #19ff88;
+            font-weight: bold;
+        }
+
+        /* Prize */
+        .prize {
+            text-align: center;
+        }
+
+        .prize-money {
+            font-size: 55px;
+            color: #19ff88;
+            font-weight: bold;
+            margin: 20px;
+            text-shadow: 0 0 20px #19ff88;
+        }
+
+        /* Contact */
+        .contact {
+            background: #07140e;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #aaa;
+            margin: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020704;
+            color: #777;
+        }
+
+        footer span {
+            color: #19ff88;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .match {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🎮 GAMEZONE</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#tournament">Tournament</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div>
+            <h1>GAMEZONE</h1>
+
+            <p>
+                Enter the arena. Challenge the best.
+                Become a champion.
+            </p>
+
+            <a href="#tournament" class="btn">
+                JOIN TOURNAMENT
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Games -->
+    <section id="games">
+
+        <h2 class="title">🔥 FEATURED GAMES</h2>
+
+        <div class="games">
+
+            <div class="game-card">
+                <div class="game-icon">🔫</div>
+                <h3>Valorant</h3>
+                <p>5 vs 5 Competitive Tournament</p>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">⚔️</div>
+                <h3>Mobile Legends</h3>
+                <p>5 vs 5 MOBA Tournament</p>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">🏆</div>
+                <h3>Free Fire</h3>
+                <p>Battle Royale Tournament</p>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">🎯</div>
+                <h3>PUBG Mobile</h3>
+                <p>Squad Battle Royale</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Tournament -->
+    <section class="tournament" id="tournament">
+
+        <h2 class="title">🏆 UPCOMING TOURNAMENT</h2>
+
+        <div class="tournament-box">
+
+            <h2 style="text-align:center; color:#19ff88;">
+                GAMEZONE CHAMPIONSHIP 2026
+            </h2>
+
+            <br>
+
+            <div class="match">
+                <strong>Team Alpha</strong>
+                <span>VS</span>
+                <strong>Team Shadow</strong>
+            </div>
+
+            <div class="match">
+                <strong>Dragon Esports</strong>
+                <span>VS</span>
+                <strong>Night Wolves</strong>
+            </div>
+
+            <div style="text-align:center; margin-top:30px;">
+                <a href="#contact" class="btn">
+                    REGISTER NOW
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Prize -->
+    <section class="prize">
+
+        <h2 class="title">💰 TOURNAMENT PRIZE</h2>
+
+        <div class="prize-money">
+            $5,000
+        </div>
+
+        <p style="color:#aaa;">
+            Champion: $3,000 &nbsp; | &nbsp;
+            Runner Up: $1,500 &nbsp; | &nbsp;
+            3rd Place: $500
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <h2 class="title">📩 CONTACT US</h2>
+
+        <p>Email: gamezone@example.com</p>
+        <p>Discord: GAMEZONE#2026</p>
+
+        <br>
+
+        <a href="mailto:gamezone@example.com" class="btn">
+            CONTACT
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 <span>GAMEZONE</span> — Gaming Tournament
+    </footer>
+
+</body>
+</html>
